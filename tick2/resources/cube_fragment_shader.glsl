@@ -65,8 +65,8 @@ void main()
 	
 	vec3 specular = C_spec * k_s * I_i / (4 * pow(distanceToLight, 2) * pi) * max(0, pow(dot(R, V), alpha));
 	
+	// I found it convenient to multiply this by 0.6 to get desired effect
 	vec3 skybox_color = 0.6 * texture(skybox, R).rgb;
-	
 	
 	// TODO: Calculate colour using Phong illumination model
 	linear_color = ambient + diffuse + specular + skybox_color;
